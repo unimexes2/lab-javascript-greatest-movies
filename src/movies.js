@@ -23,7 +23,7 @@ function howManyMovies(arr) {
   let res= arr.filter((elem)=>{
 
   if(elem.director==='Steven Spielberg'&&elem.genre.includes('Drama')){
-console.log("cine count",elem ) 
+//console.log("cine count",elem ) 
  
     return elem;}})
   return res.length;
@@ -65,7 +65,7 @@ function dramaMoviesScore(arr) {
     accum=accum+parseFloat(el.score)}
   return accum},
   0);
- console.log(result); 
+ //console.log(result); 
  if (result==0){return 0}
   result= result/dim
   result=Math.round(result* 100) /100
@@ -89,7 +89,7 @@ return a.title-b.title
   
     let arr2=arr1.sort(function(a,b){
       if (a.year==b.year){
-  console.log(a.title)
+  //console.log(a.title)
   return a.title.localeCompare(b.title);
   
       }
@@ -112,23 +112,44 @@ return a.title-b.title
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 function orderAlphabetically(arr) {
+  
+  let arr2=[...arr]
+  arr2=arr2.sort(function(a,b){
+    //console.log(a.title)
+   if(a.title>b.title){return 1}
+   if(b.title>a.title){return -1}
+   return 0;
+   
+   
+   
+   
+    
+  }) 
 
-let arrAlf=orderByYear(arr);
+ arr2 =arr2.filter((val,ind)=>{if(ind<20){
+return val}});
+arr2=arr2.map((val,ind)=>{ return val.title})
+
+//console.log(arr2)
 
 
 
+
+console.log(arr2);
+return arr2;
 
 }
-
+//orderAlphabetically(movies);
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 function turnHoursToMinutes() {}
 
-// BONUS - Iteration 8: Best yearly score average - Best yearly score average
+// BONUS - Iteration 8: BeBest yearly score average - Best yearly score average
 function bestYearAvg() {}
 
 
 
-// The following is required to make unit tests work.
+// The following is required to make unit tests wo
+/* Environment setup. Do not modify the below code. */
 /* Environment setup. Do not modify the below code. */
 if (typeof module !== 'undefined') {
   module.exports = {
