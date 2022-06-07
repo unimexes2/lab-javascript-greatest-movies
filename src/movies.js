@@ -127,16 +127,25 @@ function orderAlphabetically(arr) {
 //orderAlphabetically(movies);
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 function turnHoursToMinutes(arr) { 
-let arr1=[...arr];
-arr1.map((val)=>{
- let timE=val.duracion;
- timE=timE.replace(/]/g, "");
+let arr5=[...arr];
+arr5=arr5.map((val)=>{
+ let timE=val.duration;
+ console.log("err",timE,typeof timE)
+ timE=timE.replace(/[h]/g, ".");
+ timE=timE.replace(/[a-z]/g, "");
+ timE=timE.replace(/\s/g, "");
+timE=parseFloat(timE);
+let minHour=Math.round(timE);
+let minMin=Math.round((timE-minHour)*100)
+timE=minHour*60+minMin;
+val.duration=timE;
+return val
+ //console.log(timE, minHour,minMin)
 
-
-
-
-
-})}
+})
+//console.log(arr1)
+return arr5
+}
 // BONUS - Iteration 8: BeBest yearly score average - Best yearly score average
 function bestYearAvg() { }
 
