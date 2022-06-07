@@ -129,13 +129,16 @@ function orderAlphabetically(arr) {
 function turnHoursToMinutes(arr) { 
 let arr5=[...arr];
 arr5=arr5.map((val)=>{
- let timE=val.duration;
- console.log("err",timE,typeof timE)
+  let timE=val.duration;
+  timE= toString(timE);
+ //console.log("err",timE,typeof timE)
+  
  timE=timE.replace(/[h]/g, ".");
- timE=timE.replace(/[a-z]/g, "");
- timE=timE.replace(/\s/g, "");
-timE=parseFloat(timE);
-let minHour=Math.round(timE);
+  timE=timE.replace(/[a-z]/g, "");
+  timE=timE.replace(/\s/g, "");
+  timE=parseFloat(timE);
+
+let minHour=Math.round(timE) ;
 let minMin=Math.round((timE-minHour)*100)
 timE=minHour*60+minMin;
 val.duration=timE;
@@ -144,6 +147,7 @@ return val
 
 })
 //console.log(arr1)
+console.log (arr5)
 return arr5
 }
 // BONUS - Iteration 8: BeBest yearly score average - Best yearly score average
