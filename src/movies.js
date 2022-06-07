@@ -129,8 +129,8 @@ function orderAlphabetically(arr) {
 function turnHoursToMinutes(arr) { 
 let arr1=[...arr];
 arr1.map((val)=>{
-let timE=val.duracion;
-let hour=timE;
+ let timE=val.duracion;
+ timE=timE.replace(/]/g, "");
 
 
 
